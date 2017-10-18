@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 
-import Header from '../components/Header';
-
-export default class Home extends Component {
+export default class Header extends Component {
   constructor(props){
     super(props)
 
@@ -18,9 +16,9 @@ export default class Home extends Component {
   render() {
 
     return (
-      <div className="home-container">
-        <Header/>
-        <h1>Placeholder X</h1>
+      <div className="header-container">
+        <p>Logo</p>
+        <img src="/img/default-avatar.png" />
       </div>
     );
   }

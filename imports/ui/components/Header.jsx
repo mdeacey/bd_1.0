@@ -17,7 +17,7 @@ export default class Header extends Component {
 
     return (
       <div className="header-container">
-        <p>Logo</p>
+        <label>Logo</label>
         <img src="/img/default-avatar.png" />
       </div>
     );

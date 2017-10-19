@@ -9,7 +9,6 @@ export default class Second extends Component {
     super(props)
 
     this.state = {
-      canSubmit: false,
     }
 
     //binding functions

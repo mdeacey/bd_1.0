@@ -4,7 +4,7 @@ import {VelocityComponent,VelocityTransitionGroup} from 'velocity-react';
 
 import Header from './Header';
 
-export default class First extends Component {
+export default class Third extends Component {
   constructor(props){
     super(props)
 
@@ -23,7 +23,7 @@ export default class First extends Component {
         <div className="home-container">
           <div className="row"></div>
           <div className="row">
-            <h1>Placeholder X</h1>
+            <h1>Third Screen</h1>
           </div>
           <div className="row"></div>
         </div>
@@ -31,3 +31,5 @@ export default class First extends Component {
     );
   }
 };
+
+

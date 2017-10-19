@@ -18,9 +18,15 @@ export default class Home extends Component {
   render() {
 
     return (
-      <div className="home-container">
+      <div className="wrapper">
         <Header/>
-        <h1>Placeholder X</h1>
+        <div className="home-container">
+          <div className="row"></div>
+          <div className="row">
+            <h1>Placeholder X</h1>
+          </div>
+          <div className="row"></div>
+        </div>
       </div>
     );
   }

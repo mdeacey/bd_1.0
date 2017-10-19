@@ -1,5 +1,6 @@
 .wrapper, html, body {
   height:100%;
+  font-family: "Times New Roman";
 }
 .wrapper {
   display: flex;
@@ -27,11 +28,28 @@
   align-items: center;
 }
 
+.flex {
+  display:flex;
+  flex: 1;
+}
+
 .row {
   width: 100%;
   height: 220px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.grey {
+  color: lightgray;
+}
+
+.white {
+  color: #fff;
 }

@@ -23,10 +23,9 @@ export default class Second extends Component {
       <div className="wrapper">
         <Header/>
         <div className="home-container">
-          <VelocityTransitionGroup
-            component="div"
-            style={{width: "100%"}}
-            enter={{animation: 'slideDown', duration: 200}}
+          <VelocityComponent
+            animation={"transition.slideDownIn"}
+            duration={200}
           >
             <button className="row black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="grey">Placeholder A1</h4>
@@ -34,7 +33,7 @@ export default class Second extends Component {
               <h3 className="white">Placeholder A2</h3>
               <h5 className="grey">Placeholder A3</h5>
             </button>
-          </VelocityTransitionGroup>
+          </VelocityComponent>
 
           <div className="row">
             <h5 className="time">4:40pm</h5>
@@ -42,10 +41,9 @@ export default class Second extends Component {
             <h1>ABCD.EF</h1>
           </div>
 
-          <VelocityTransitionGroup
-            component="div"
-            style={{width: "100%"}}
-            enter={{animation: 'slideUp', duration: 200}}
+          <VelocityComponent
+            animation={"transition.slideUpIn"}
+            duration={200}
           >
             <button className="row black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="grey">Placeholder B1</h4>
@@ -53,7 +51,7 @@ export default class Second extends Component {
               <h3 className="white">Placeholder B2</h3>
               <h5 className="grey">Placeholder B3</h5>
             </button>
-          </VelocityTransitionGroup>
+          </VelocityComponent>
         </div>
       </div>
     );

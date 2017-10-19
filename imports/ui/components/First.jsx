@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import {VelocityComponent,VelocityTransitionGroup} from 'velocity-react';
 
-import Header from '../components/Header';
+import Header from './Header';
 
-export default class Home extends Component {
+export default class First extends Component {
   constructor(props){
     super(props)
 
     this.state = {
-      canSubmit: false,
+      opacity: false,
     }
 
     //binding functions

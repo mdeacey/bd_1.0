@@ -2,33 +2,48 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import {VelocityComponent,VelocityTransitionGroup} from 'velocity-react';
 
-import Header from '../components/Header';
+import First from '../components/First';
+import Second from '../components/Second';
 
 export default class Home extends Component {
   constructor(props){
     super(props)
 
     this.state = {
-      canSubmit: false,
+      opacity: false,
+      component: 1,
     }
 
     //binding functions
     autoBind(this);
   }
 
+  toggleComponent() {
+    console.log("calling next screen...");
+    this.setState(currentState => ({ component: currentState.component + 1}));
+  }
+
   render() {
 
+    let component = <First/>;
+    console.log(this.state.component);
+
+    switch (this.state.component) {
+      case 2: {
+        component = <Second/>
+        break;
+      }
+    }
+
     return (
-      <div className="wrapper">
-        <Header/>
-        <div className="home-container">
-          <div className="row"></div>
-          <div className="row">
-            <h1>Placeholder X</h1>
-          </div>
-          <div className="row"></div>
-        </div>
-      </div>
+      <VelocityComponent
+        animation={{opacity: this.state.opacity ? 1 : 0}}
+        duration={20000}
+        begin={() => console.log("begin...")}
+        complete={() => this.toggleComponent()}
+      >
+        {component}
+      </VelocityComponent>
     );
   }
 };

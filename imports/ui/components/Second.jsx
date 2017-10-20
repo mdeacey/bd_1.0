@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactFitText from 'react-fittext';
-// import 'velocity-animate';
-// import 'velocity-animate/velocity.ui';
+import moment from 'moment';
 import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'velocity-react';
 
 import Header from './Header';
@@ -20,6 +19,26 @@ export default class Second extends Component {
     autoBind(this);
   }
 
+  componentDidMount() {
+    this.setState({
+      time: moment().hour("4").minute("30").second("00"),
+      curTime: "4:40pm"
+    });
+  }
+
+  componentWillMount(){
+    let self = this;
+    setInterval(function(){
+      let date = self.state.time;
+      let curTime = date.add(1, 'm');
+      if (curTime.hour() == 4 && curTime.minute() <= 35 && curTime.minute() >= 30) {
+        self.setState({curTime: "4:40pm"});
+      } else {
+        self.setState({curTime: "4:45pm"});
+      }
+    }, 60 * 1000);
+  }
+
   toggleText() {
     const {text} = this.state;
 
@@ -33,7 +52,7 @@ export default class Second extends Component {
   }
 
   render() {
-    const {text, placeholder} = this.state;
+    const {text, placeholder, curTime} = this.state;
 
     return (
       <div className="wrapper">
@@ -60,7 +79,9 @@ export default class Second extends Component {
           </VelocityComponent>
 
           <div className="row row-h30">
-            <h5 className="time">4:40pm</h5>
+            <ReactFitText minFontSize={32}>
+              <h5 className="time">{curTime}</h5>
+            </ReactFitText>
             <ReactFitText minFontSize={22}>
               <h6 className="placeholder1c-font">Placeholder {placeholder}</h6>
             </ReactFitText>
@@ -70,7 +91,9 @@ export default class Second extends Component {
               duration={2000}
               complete={() => this.toggleText()}
             >
-              <h1 className="black">{text}</h1>
+              <ReactFitText minFontSize={52}>
+                <h1 className="black">{text}</h1>
+              </ReactFitText>
             </VelocityComponent>
           </div>
 

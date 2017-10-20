@@ -27,7 +27,7 @@ export default class Second extends Component {
             animation={"transition.slideDownIn"}
             duration={200}
           >
-            <button className="row black-bg" onClick={() => console.log("clicked...")}>
+            <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="grey">Placeholder A1</h4>
               <h1 className="white">A</h1>
               <h3 className="white">Placeholder A2</h3>
@@ -35,7 +35,7 @@ export default class Second extends Component {
             </button>
           </VelocityComponent>
 
-          <div className="row">
+          <div className="row row-h30">
             <h5 className="time">4:40pm</h5>
             <h6 className="grey">Placeholder C1</h6>
             <h1>ABCD.EF</h1>
@@ -45,7 +45,7 @@ export default class Second extends Component {
             animation={"transition.slideUpIn"}
             duration={200}
           >
-            <button className="row black-bg" onClick={() => console.log("clicked...")}>
+            <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="grey">Placeholder B1</h4>
               <h1 className="white">B</h1>
               <h3 className="white">Placeholder B2</h3>

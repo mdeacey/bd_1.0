@@ -47,7 +47,7 @@ export default class Home extends Component {
     return (
       <VelocityComponent
         animation={{opacity: this.state.opacity ? 1 : 0}}
-        duration={500}
+        duration={2000}
         begin={() => console.log("begin...")}
         complete={() => this.toggleComponent()}
       >

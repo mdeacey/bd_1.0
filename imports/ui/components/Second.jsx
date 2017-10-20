@@ -60,7 +60,9 @@ export default class Second extends Component {
 
           <div className="row row-h30">
             <h5 className="time">4:40pm</h5>
-            <h6 className="gray">Placeholder C1</h6>
+            <ReactFitText minFontSize={22}>
+              <h6 className="placeholder1c-font">Placeholder C1</h6>
+            </ReactFitText>
             <VelocityComponent
               ref="text"
               animation={{opacity: 1}}

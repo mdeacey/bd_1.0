@@ -12,7 +12,8 @@ export default class Second extends Component {
     super(props)
 
     this.state = {
-      text: "C1+ABCD.EF"
+      text: "ABCD.EF",
+      placeholder: "C1"
     }
 
     //binding functions
@@ -22,17 +23,17 @@ export default class Second extends Component {
   toggleText() {
     const {text} = this.state;
 
-    if (text == "C1+ABCD.EF") {
-      this.setState({text: "D1+AB.CD"});
-    } else if (text == "D1+AB.CD") {
-      this.setState({text: "C1+ABCD.EF"});
+    if (text == "ABCD.EF") {
+      this.setState({text: "AB.CD", placeholder: "D1"});
+    } else if (text == "AB.CD") {
+      this.setState({text: "ABCD.EF", placeholder: "C1"});
     }
 
     this.refs.text.runAnimation();
   }
 
   render() {
-    const {text} = this.state;
+    const {text, placeholder} = this.state;
 
     return (
       <div className="wrapper">
@@ -61,7 +62,7 @@ export default class Second extends Component {
           <div className="row row-h30">
             <h5 className="time">4:40pm</h5>
             <ReactFitText minFontSize={22}>
-              <h6 className="placeholder1c-font">Placeholder C1</h6>
+              <h6 className="placeholder1c-font">Placeholder {placeholder}</h6>
             </ReactFitText>
             <VelocityComponent
               ref="text"

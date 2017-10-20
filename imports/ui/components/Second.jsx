@@ -12,13 +12,27 @@ export default class Second extends Component {
     super(props)
 
     this.state = {
+      text: "C1+ABCD.EF"
     }
 
     //binding functions
     autoBind(this);
   }
 
+  toggleText() {
+    const {text} = this.state;
+
+    if (text == "C1+ABCD.EF") {
+      this.setState({text: "D1+AB.CD"});
+    } else if (text == "D1+AB.CD") {
+      this.setState({text: "C1+ABCD.EF"});
+    }
+
+    this.refs.text.runAnimation();
+  }
+
   render() {
+    const {text} = this.state;
 
     return (
       <div className="wrapper">
@@ -47,7 +61,14 @@ export default class Second extends Component {
           <div className="row row-h30">
             <h5 className="time">4:40pm</h5>
             <h6 className="gray">Placeholder C1</h6>
-            <h1>ABCD.EF</h1>
+            <VelocityComponent
+              ref="text"
+              animation={{opacity: 1}}
+              duration={2000}
+              complete={() => this.toggleText()}
+            >
+              <h1 className="black">{text}</h1>
+            </VelocityComponent>
           </div>
 
           <VelocityComponent

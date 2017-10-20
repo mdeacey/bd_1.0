@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
+import ReactFitText from 'react-fittext';
 
 export default class Header extends Component {
   constructor(props){
@@ -17,7 +18,9 @@ export default class Header extends Component {
 
     return (
       <div className="header-container">
-        <label>Logo</label>
+        <ReactFitText maxFontSize={34} minFontSize={18}>
+          <label>Logo</label>
+        </ReactFitText>
         <img src="/img/default-avatar.svg" />
       </div>
     );

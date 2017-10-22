@@ -12,7 +12,7 @@ export default class Second extends Component {
 
     this.state = {
       text: "ABCD.EF",
-      placeholder: "C1"
+      placeholder: "Placeholder C1"
     }
 
     //binding functions
@@ -20,10 +20,8 @@ export default class Second extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      time: moment().hour("4").minute("30").second("00"),
-      curTime: "4:40pm"
-    });
+    let curTime = moment();
+    this.setTime(curTime);
   }
 
   componentWillMount(){
@@ -31,21 +29,28 @@ export default class Second extends Component {
     setInterval(function(){
       let date = self.state.time;
       let curTime = date.add(1, 'm');
-      if (curTime.hour() == 4 && curTime.minute() <= 35 && curTime.minute() >= 30) {
-        self.setState({curTime: "4:40pm"});
-      } else {
-        self.setState({curTime: "4:45pm"});
-      }
+      self.setTime(curTime);
     }, 60 * 1000);
+  }
+
+  setTime(curTime) {
+    let minute = curTime.minute().toString().charAt(1);
+    if (minute >= "0" && minute < "5") {
+      let add_min = 10 - parseInt(minute);
+      self.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+    } else if (minute >= "5" && minute < "0"){
+      let add_min = 15 - parseInt(minute);
+      self.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+    }
   }
 
   toggleText() {
     const {text} = this.state;
 
     if (text == "ABCD.EF") {
-      this.setState({text: "AB.CD", placeholder: "D1"});
+      this.setState({text: "AB.CD", placeholder: "Placeholder D1"});
     } else if (text == "AB.CD") {
-      this.setState({text: "ABCD.EF", placeholder: "C1"});
+      this.setState({text: "ABCD.EF", placeholder: "Placeholder C1"});
     }
 
     this.refs.text.runAnimation();
@@ -83,7 +88,7 @@ export default class Second extends Component {
               <h5 className="time">{curTime}</h5>
             </ReactFitText>
             <ReactFitText minFontSize={22}>
-              <h6 className="placeholder1c-font">Placeholder {placeholder}</h6>
+              <h6 className="placeholder1c-font">{placeholder}</h6>
             </ReactFitText>
             <VelocityComponent
               ref="text"

@@ -37,10 +37,10 @@ export default class Second extends Component {
     let minute = curTime.minute().toString().charAt(1);
     if (minute >= "0" && minute < "5") {
       let add_min = 10 - parseInt(minute);
-      self.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+      this.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
     } else if (minute >= "5" && minute < "0"){
       let add_min = 15 - parseInt(minute);
-      self.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+      this.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
     }
   }
 

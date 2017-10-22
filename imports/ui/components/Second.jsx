@@ -34,7 +34,8 @@ export default class Second extends Component {
   }
 
   setTime(curTime) {
-    let minute = curTime.minute().toString().charAt(1);
+    console.log(curTime);
+    let minute = curTime.minute().toString().length == 2 ? curTime.minute().toString().charAt(1) : curTime.minute().toString().charAt(0);
     if (minute >= "0" && minute < "5") {
       let add_min = 10 - parseInt(minute);
       this.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
@@ -68,23 +69,23 @@ export default class Second extends Component {
             duration={200}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
-              <ReactFitText minFontSize={22}>
+              <ReactFitText minFontSize={16}>
                 <h4 className="placeholder1-font">Placeholder A1</h4>
               </ReactFitText>
-              <ReactFitText minFontSize={82}>
-                <h1 className="font-112">A</h1>
+              <ReactFitText minFontSize={56}>
+                <h1 className="font-56">A</h1>
               </ReactFitText>
-              <ReactFitText minFontSize={30}>
+              <ReactFitText minFontSize={20}>
                 <h3 className="placeholder2-font">Placeholder A2</h3>
               </ReactFitText>
-              <ReactFitText minFontSize={12}>
+              <ReactFitText minFontSize={11}>
                 <h5 className="placeholder3-font">Placeholder A3</h5>
               </ReactFitText>
             </button>
           </VelocityComponent>
 
           <div className="row row-h30">
-            <ReactFitText minFontSize={32}>
+            <ReactFitText minFontSize={22}>
               <h5 className="time">{curTime}</h5>
             </ReactFitText>
             <ReactFitText minFontSize={22}>
@@ -96,8 +97,8 @@ export default class Second extends Component {
               duration={2000}
               complete={() => this.toggleText()}
             >
-              <ReactFitText minFontSize={52}>
-                <h1 className="black">{text}</h1>
+              <ReactFitText minFontSize={56}>
+                <h1 className="font-56 black">{text}</h1>
               </ReactFitText>
             </VelocityComponent>
           </div>
@@ -110,13 +111,13 @@ export default class Second extends Component {
               <ReactFitText minFontSize={22}>
                 <h4 className="placeholder1-font">Placeholder B1</h4>
               </ReactFitText>
-              <ReactFitText minFontSize={82}>
-                <h1 className="font-112">B</h1>
+              <ReactFitText minFontSize={56}>
+                <h1 className="font-56">B</h1>
               </ReactFitText>
-              <ReactFitText minFontSize={30}>
+              <ReactFitText minFontSize={20}>
                 <h3 className="placeholder2-font">Placeholder B2</h3>
               </ReactFitText>
-              <ReactFitText minFontSize={12}>
+              <ReactFitText minFontSize={11}>
                 <h5 className="placeholder3-font">Placeholder B3</h5>
               </ReactFitText>
             </button>

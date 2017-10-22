@@ -12,6 +12,7 @@ export default class Second extends Component {
 
     this.state = {
       text: "ABCD.EF",
+      smallText: "ABC",
       placeholder: "Placeholder C1"
     }
 
@@ -49,16 +50,16 @@ export default class Second extends Component {
     const {text} = this.state;
 
     if (text == "ABCD.EF") {
-      this.setState({text: "AB.CD", placeholder: "Placeholder D1"});
+      this.setState({text: "AB.CD", smallText: "A", placeholder: "Placeholder D1"});
     } else if (text == "AB.CD") {
-      this.setState({text: "ABCD.EF", placeholder: "Placeholder C1"});
+      this.setState({text: "ABCD.EF", smallText: "ABC", placeholder: "Placeholder C1"});
     }
 
     this.refs.text.runAnimation();
   }
 
   render() {
-    const {text, placeholder, curTime} = this.state;
+    const {text, smallText, placeholder, curTime} = this.state;
 
     return (
       <div className="wrapper">
@@ -98,7 +99,7 @@ export default class Second extends Component {
               complete={() => this.toggleText()}
             >
               <ReactFitText minFontSize={56}>
-                <h1 className="font-56 black">{text}</h1>
+                <label className="font-56 black">{text}<small className="black">{smallText}</small></label>
               </ReactFitText>
             </VelocityComponent>
           </div>

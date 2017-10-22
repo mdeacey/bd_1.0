@@ -85,7 +85,7 @@ export default class Second extends Component {
           </VelocityComponent>
 
           <div className="row row-h30">
-            <ReactFitText minFontSize={22}>
+            <ReactFitText minFontSize={32}>
               <h5 className="time">{curTime}</h5>
             </ReactFitText>
             <ReactFitText minFontSize={22}>

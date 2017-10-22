@@ -35,7 +35,6 @@ export default class Second extends Component {
   }
 
   setTime(curTime) {
-    console.log(curTime);
     let minute = curTime.minute().toString().length == 2 ? curTime.minute().toString().charAt(1) : curTime.minute().toString().charAt(0);
     if (minute >= "0" && minute < "5") {
       let add_min = 10 - parseInt(minute);
@@ -67,7 +66,7 @@ export default class Second extends Component {
         <div className="home-container">
           <VelocityComponent
             animation={"transition.slideDownIn"}
-            duration={200}
+            duration={366}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
               <ReactFitText minFontSize={16}>
@@ -106,7 +105,7 @@ export default class Second extends Component {
 
           <VelocityComponent
             animation={"transition.slideUpIn"}
-            duration={200}
+            duration={366}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
               <ReactFitText minFontSize={22}>

@@ -21,27 +21,25 @@ export default class Second extends Component {
   }
 
   componentDidMount() {
-    let curTime = moment();
-    this.setTime(curTime);
+    this.setTime(moment());
   }
 
   componentWillMount(){
     let self = this;
     setInterval(function(){
-      let date = self.state.time;
-      let curTime = date.add(1, 'm');
-      self.setTime(curTime);
+      self.setTime(moment());
     }, 60 * 1000);
   }
 
   setTime(curTime) {
-    let minute = curTime.minute().toString().length == 2 ? curTime.minute().toString().charAt(1) : curTime.minute().toString().charAt(0);
+    let time = curTime;
+    let minute = time.minute().toString().length == 2 ? time.minute().toString().charAt(1) : time.minute().toString().charAt(0);
     if (minute >= "0" && minute < "5") {
       let add_min = 10 - parseInt(minute);
-      this.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+      this.setState({curTime: time.add(add_min, 'm').format("h:mm a")});
     } else if (minute >= "5" && minute <= "9"){
       let add_min = 15 - parseInt(minute);
-      this.setState({time: curTime, curTime: curTime.add(add_min, 'm').format("hh:mm a")});
+      this.setState({curTime: time.add(add_min, 'm').format("h:mm a")});
     }
   }
 

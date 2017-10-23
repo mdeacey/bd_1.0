@@ -20,7 +20,6 @@ export default class Home extends Component {
   }
 
   toggleComponent() {
-    console.log("calling next screen...");
     this.setState(currentState => ({ opacity: false, component: currentState.component + 1}));
   }
 

@@ -66,60 +66,38 @@ export default class Second extends Component {
         <div className="home-container">
           <VelocityComponent
             animation={"transition.slideDownIn"}
-            duration={366}
+            duration={800}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
-              <ReactFitText minFontSize={16}>
-                <h4 className="placeholder1-font">Placeholder A1</h4>
-              </ReactFitText>
-              <ReactFitText minFontSize={56}>
-                <h1 className="font-56">A</h1>
-              </ReactFitText>
-              <ReactFitText minFontSize={20}>
-                <h3 className="placeholder2-font">Placeholder A2</h3>
-              </ReactFitText>
-              <ReactFitText minFontSize={11}>
-                <h5 className="placeholder3-font">Placeholder A3</h5>
-              </ReactFitText>
+              <h4 className="placeholder1-font">Placeholder A1</h4>
+              <h1 className="font-56">A</h1>
+              <h3 className="placeholder2-font">Placeholder A2</h3>
+              <h5 className="placeholder3-font">Placeholder A3</h5>
             </button>
           </VelocityComponent>
 
           <div className="row row-h30">
-            <ReactFitText minFontSize={32}>
-              <h5 className="time">{curTime}</h5>
-            </ReactFitText>
-            <ReactFitText minFontSize={22}>
-              <h6 className="placeholder1c-font">{placeholder}</h6>
-            </ReactFitText>
+            <h5 className="time">{curTime}</h5>
+            <h6 className="placeholder1c-font">{placeholder}</h6>
             <VelocityComponent
               ref="text"
               animation={{opacity: 1}}
               duration={2000}
               complete={() => this.toggleText()}
             >
-              <ReactFitText minFontSize={56}>
-                <label className="font-56 black">{text}<small className="black">{smallText}</small></label>
-              </ReactFitText>
+              <h1 className="font-56 black">{text}<small className="small-text black">{smallText}</small></h1>
             </VelocityComponent>
           </div>
 
           <VelocityComponent
             animation={"transition.slideUpIn"}
-            duration={366}
+            duration={800}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
-              <ReactFitText minFontSize={22}>
-                <h4 className="placeholder1-font">Placeholder B1</h4>
-              </ReactFitText>
-              <ReactFitText minFontSize={56}>
-                <h1 className="font-56">B</h1>
-              </ReactFitText>
-              <ReactFitText minFontSize={20}>
-                <h3 className="placeholder2-font">Placeholder B2</h3>
-              </ReactFitText>
-              <ReactFitText minFontSize={11}>
-                <h5 className="placeholder3-font">Placeholder B3</h5>
-              </ReactFitText>
+              <h4 className="placeholder1-font">Placeholder B1</h4>
+              <h1 className="font-56">B</h1>
+              <h3 className="placeholder2-font">Placeholder B2</h3>
+              <h5 className="placeholder3-font">Placeholder B3</h5>
             </button>
           </VelocityComponent>
         </div>

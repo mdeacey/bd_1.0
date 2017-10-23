@@ -18,9 +18,7 @@ export default class Header extends Component {
 
     return (
       <div className="header-container">
-        <ReactFitText maxFontSize={34} minFontSize={18}>
-          <label>Logo</label>
-        </ReactFitText>
+        <label>Logo</label>
         <img src="/img/default-avatar.svg" />
       </div>
     );

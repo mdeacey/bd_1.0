@@ -93,7 +93,7 @@ export default class Second extends Component {
             animation={"transition.slideUpIn"}
             duration={800}
           >
-            <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
+            <button className="row row-h35-bottom black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder B1</h4>
               <h1 className="font-56">B</h1>
               <h3 className="placeholder2-font">Placeholder B2</h3>

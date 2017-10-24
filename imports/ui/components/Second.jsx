@@ -83,7 +83,7 @@ export default class Second extends Component {
               duration={2000}
               complete={() => this.toggleText()}
             >
-              <h1 className="font-56 black">{text}<small className="small-text black">{smallText}</small></h1>
+              <h1 className="font-56 font-weight-600 black">{text}<small className="small-text black">{smallText}</small></h1>
             </VelocityComponent>
           </div>
 

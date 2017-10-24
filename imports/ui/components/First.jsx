@@ -21,11 +21,9 @@ export default class First extends Component {
       <div className="wrapper">
         <Header/>
         <div className="home-container">
-          <div className="row"></div>
-          <div className="row">
-            <h1>Placeholder X</h1>
+          <div className="row-first">
+            <h1 className="placeholder">Placeholder X</h1>
           </div>
-          <div className="row"></div>
         </div>
       </div>
     );

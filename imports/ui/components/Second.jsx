@@ -6,6 +6,34 @@ import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'veloci
 
 import Header from './Header';
 
+const slideUpAnimation = velocityHelpers.registerEffect({
+  defaultDuration: 1100,
+  calls: [
+    [{
+      opacity: [1, 0],
+      translateY: [0, 20],
+      translateZ: 0,
+    }, 1, {
+      // delay: 100,
+      easing: 'ease-in',
+    }]
+  ],
+});
+
+const slideDownAnimation = velocityHelpers.registerEffect({
+  defaultDuration: 1100,
+  calls: [
+    [{
+      opacity: [1, 0],
+      translateY: [0, -20],
+      translateZ: 0,
+    }, 1, {
+      // delay: 100,
+      easing: 'ease-in',
+    }]
+  ],
+});
+
 export default class Second extends Component {
   constructor(props){
     super(props)
@@ -63,8 +91,9 @@ export default class Second extends Component {
         <Header/>
         <div className="home-container">
           <VelocityComponent
-            animation={"transition.slideDownIn"}
-            duration={800}
+            // animation={"transition.slideDownIn"}
+            // duration={800}
+            animation={slideDownAnimation}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder A1</h4>
@@ -88,8 +117,8 @@ export default class Second extends Component {
           </div>
 
           <VelocityComponent
-            animation={"transition.slideUpIn"}
-            duration={800}
+            animation={slideUpAnimation}
+            // duration={800}
           >
             <button className="row row-h35-bottom black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder B1</h4>

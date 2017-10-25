@@ -5,6 +5,7 @@
   overflow: hidden !important;
 }
 .wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -17,8 +18,7 @@
   background-color: #f9f9f9;
   text-align: center !important;
   label {
-    //font-size: 18px;
-    font-size: 2.69vh;
+    font-size: 16px;
     vertical-align: middle;
     line-height: 44px;
     margin-left: 35px !important;
@@ -33,10 +33,11 @@
 .home-container {
   flex: 1;
   display: flex;
-  height: 100vh;
+  height: 97.7vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  vertical-align: middle;
 }
 
 .flex {
@@ -80,7 +81,7 @@
     font-weight: normal;
     font-size: 2.39vh;
     //font-size: 16px;
-    margin-bottom: 25px !important;
+    margin-bottom: 15px !important;
   }
   .font-56 {
     margin-bottom: 20px !important;
@@ -90,18 +91,24 @@
 //iphone
 @media only screen and (min-width: 350px) and (max-width: 812px) {
   .row-h35 {
-    height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    //height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    height: 35%;// iphone: 28vh, ipad: 32.6vh (safari)
+    position: absolute;
+    top: 44px;
   }
   .row-h35-bottom {
-    height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    //height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    height: 35%;// iphone: 28vh, ipad: 32.6vh (safari)
     position: absolute;
     bottom: 0;
   }
 
   .row-h30 {
     position: absolute;
-    bottom: 28vh; // iphone: 28vh, ipad: 32.6vh (safari)
-    height: 25vh; // iphone: 25vh, ipad: 22.5vh (safari)
+    //bottom: 28vh; // iphone: 28vh, ipad: 32.6vh (safari)
+    //height: 25vh; // iphone: 25vh, ipad: 22.5vh (safari)
+    bottom: 30%; // iphone: 28vh, ipad: 32.6vh (safari)
+    height: 30%; // iphone: 25vh, ipad: 22.5vh (safari)
   }
 }
 

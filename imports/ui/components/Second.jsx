@@ -90,8 +90,6 @@ export default class Second extends Component {
         <Header/>
         <div className="home-container">
           <VelocityComponent
-            // animation={"transition.slideDownIn"}
-            // duration={800}
             runOnMount={true}
             animation={slideDownAnimation}
           >

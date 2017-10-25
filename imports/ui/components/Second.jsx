@@ -95,7 +95,7 @@ export default class Second extends Component {
             runOnMount={true}
             animation={slideDownAnimation}
           >
-            <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
+            <button className="row row-h35 no-margin black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder A1</h4>
               <h1 className="font-56">A</h1>
               <h3 className="placeholder2-font">Placeholder A2</h3>
@@ -103,7 +103,7 @@ export default class Second extends Component {
             </button>
           </VelocityComponent>
 
-          <div className="row row-h30">
+          <div className="row row-h30 no-margin">
             <h5 className="time">{curTime}</h5>
             <h6 className="placeholder1c-font">{placeholder}</h6>
             <VelocityComponent
@@ -121,7 +121,7 @@ export default class Second extends Component {
             runOnMount={true}
             // duration={800}
           >
-            <button className="row row-h35-bottom black-bg" onClick={() => console.log("clicked...")}>
+            <button className="row row-h35-bottom no-margin black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder B1</h4>
               <h1 className="font-56">B</h1>
               <h3 className="placeholder2-font">Placeholder B2</h3>

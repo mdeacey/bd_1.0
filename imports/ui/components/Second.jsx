@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import ReactFitText from 'react-fittext';
 import moment from 'moment';
 import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'velocity-react';
 
 import Header from './Header';
 
 const slideUpAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 1100,
+  defaultDuration: 900,
   calls: [
     [{
       opacity: [1, 0],
-      translateY: [0, 20],
+      translateY: [0, 75],
       translateZ: 0,
     }, 1, {
-      // delay: 100,
+      // delay: 500,
       easing: 'ease-in',
     }]
   ],
@@ -25,10 +24,10 @@ const slideDownAnimation = velocityHelpers.registerEffect({
   calls: [
     [{
       opacity: [1, 0],
-      translateY: [0, -20],
+      translateY: [0, -75],
       translateZ: 0,
     }, 1, {
-      // delay: 100,
+      // delay: 500,
       easing: 'ease-in',
     }]
   ],
@@ -93,6 +92,7 @@ export default class Second extends Component {
           <VelocityComponent
             // animation={"transition.slideDownIn"}
             // duration={800}
+            runOnMount={true}
             animation={slideDownAnimation}
           >
             <button className="row row-h35 black-bg" onClick={() => console.log("clicked...")}>
@@ -118,6 +118,7 @@ export default class Second extends Component {
 
           <VelocityComponent
             animation={slideUpAnimation}
+            runOnMount={true}
             // duration={800}
           >
             <button className="row row-h35-bottom black-bg" onClick={() => console.log("clicked...")}>

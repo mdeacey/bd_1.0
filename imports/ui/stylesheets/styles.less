@@ -87,33 +87,60 @@
   }
 }
 
-.row-h35 {
-  height: 32.6vh;// iphone: 28vh, ipad: 32.6vh (safari)
-  margin: 0px !important;
-  border: 0px !important;
-  display: flex;
-  justify-content: center;
-  //opacity: 0 !important;
-}
-.row-h35-bottom {
-  height: 32.6vh;// iphone: 28vh, ipad: 32.6vh (safari)
-  position: absolute;
-  bottom: 0;
-  margin: 0px !important;
-  border: 0px !important;
-  display: flex;
-  justify-content: center;
-  //opacity: 0 !important;
+//iphone
+@media only screen and (max-width: 1125px) {
+  .row-h35 {
+    height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    margin: 0px !important;
+    border: 0px !important;
+    display: flex;
+    justify-content: center;
+  }
+  .row-h35-bottom {
+    height: 28vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    position: absolute;
+    bottom: 0;
+    margin: 0px !important;
+    border: 0px !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .row-h30 {
+    position: absolute;
+    bottom: 28vh; // iphone: 28vh, ipad: 32.6vh (safari)
+    height: 25vh; // iphone: 25vh, ipad: 22.5vh (safari)
+    margin: 0px !important;
+    border: 0px !important;
+  }
 }
 
-.row-h30 {
-  position: absolute;
-  bottom: 32.6vh; // iphone: 28vh, ipad: 32.6vh (safari)
-  height: 22.5vh; // iphone: 25vh, ipad: 22.5vh (safari)
-  margin: 0px !important;
-  border: 0px !important;
-  //display: flex;
-  //justify-content: center;
+//ipad
+@media only screen and (max-width: 1536px) {
+  .row-h35 {
+    height: 32.6vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    margin: 0px !important;
+    border: 0px !important;
+    display: flex;
+    justify-content: center;
+  }
+  .row-h35-bottom {
+    height: 32.6vh;// iphone: 28vh, ipad: 32.6vh (safari)
+    position: absolute;
+    bottom: 0;
+    margin: 0px !important;
+    border: 0px !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .row-h30 {
+    position: absolute;
+    bottom: 32.6vh; // iphone: 28vh, ipad: 32.6vh (safari)
+    height: 22.5vh; // iphone: 25vh, ipad: 22.5vh (safari)
+    margin: 0px !important;
+    border: 0px !important;
+  }
 }
 
 .black-bg {

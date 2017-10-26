@@ -12,15 +12,15 @@ const slideUpAnimation = velocityHelpers.registerEffect({
       opacity: [1, 0],
       translateY: [0, 75],
       translateZ: 0,
-    }, 1, {
-      // delay: 500,
+    }, 2, {
+      delay: 500,
       easing: 'ease-in',
     }]
   ],
 });
 
 const slideDownAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 1100,
+  defaultDuration: 900,
   calls: [
     [{
       opacity: [1, 0],
@@ -117,7 +117,6 @@ export default class Second extends Component {
           <VelocityComponent
             animation={slideUpAnimation}
             runOnMount={true}
-            // duration={800}
           >
             <button className="row row-h35-bottom no-margin black-bg" onClick={() => console.log("clicked...")}>
               <h4 className="placeholder1-font">Placeholder B1</h4>

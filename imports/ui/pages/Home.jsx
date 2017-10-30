@@ -11,7 +11,6 @@ export default class Home extends Component {
     super(props)
 
     this.state = {
-      opacity: false,
       component: 1,
     }
 
@@ -26,7 +25,6 @@ export default class Home extends Component {
   render() {
 
     let props = {
-      opacity: this.state.opacity,
       toggleComponent: this.toggleComponent.bind(this)
     };
 
@@ -35,10 +33,6 @@ export default class Home extends Component {
     switch (this.state.component) {
       case 2: {
         component = <Second {...props} />
-        break;
-      }
-      case 3: {
-        component = <Third {...props} />
         break;
       }
     }

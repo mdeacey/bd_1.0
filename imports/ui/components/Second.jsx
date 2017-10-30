@@ -5,39 +5,39 @@ import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'veloci
 
 import Header from './Header';
 
-const slideUpAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 900,
-  calls: [
-    [{
-      opacity: [1, 0],
-      translateY: [0, 75],
-      translateZ: 0,
-    }, 2, {
-      delay: 500,
-      easing: 'ease-in',
-    }]
-  ],
-});
-
 const slideDownAnimation = velocityHelpers.registerEffect({
   defaultDuration: 900,
   calls: [
     [{
       opacity: [1, 0],
       translateY: [0, -75],
-      translateZ: 0,
     }, 1, {
       // delay: 500,
-      easing: 'ease-in',
+      // easing: 'ease-in',
     }]
   ],
 });
+
+const slideUpAnimation = velocityHelpers.registerEffect({
+  defaultDuration: 900,
+  calls: [
+    [{
+      opacity: [1, 0],
+      translateY: [0, 75],
+    }, 1, {
+      // delay: 500,
+      // easing: 'ease-in',
+    }]
+  ],
+});
+
 
 export default class Second extends Component {
   constructor(props){
     super(props)
 
     this.state = {
+      display: true,
       text: "ABCD.EF",
       smallText: "ABC",
       placeholder: "Placeholder C1"
@@ -49,6 +49,10 @@ export default class Second extends Component {
 
   componentDidMount() {
     this.setTime(moment());
+    let self = this;
+    setInterval(() => {
+      self.setState({display: true});
+    }, 500);
   }
 
   componentWillMount(){
@@ -88,44 +92,47 @@ export default class Second extends Component {
     return (
       <div className="wrapper">
         <Header/>
-        <div className="home-container">
-          <VelocityComponent
-            runOnMount={true}
-            animation={slideDownAnimation}
-          >
-            <button className="row row-h35 no-margin black-bg" onClick={() => console.log("clicked...")}>
-              <h4 className="placeholder1-font">Placeholder A1</h4>
-              <h1 className="font-56">A</h1>
-              <h3 className="placeholder2-font">Placeholder A2</h3>
-              <h5 className="placeholder3-font">Placeholder A3</h5>
-            </button>
-          </VelocityComponent>
-
-          <div className="row row-h30 no-margin">
-            <h5 className="time">{curTime}</h5>
-            <h6 className="placeholder1c-font">{placeholder}</h6>
+        {this.state.display &&
+          <div className="home-container">
             <VelocityComponent
-              ref="text"
-              animation={{opacity: 1}}
-              duration={2000}
-              complete={() => this.toggleText()}
+              animation={slideDownAnimation}
             >
-              <h1 className="font-56 font-weight-600 black">{text}<small className="small-text black">{smallText}</small></h1>
+              <button className="row row-h35 no-margin black-bg no-opacity" onClick={() => console.log("clicked...")}>
+                <h4 className="placeholder1-font">Placeholder A1</h4>
+                <h1 className="font-56">A</h1>
+                <h3 className="placeholder2-font">Placeholder A2</h3>
+                <h5 className="placeholder3-font">Placeholder A3</h5>
+              </button>
+            </VelocityComponent>
+
+            <div className="row row-h30 no-margin">
+              <h5 className="time">{curTime}</h5>
+              <h6 className="placeholder1c-font">{placeholder}</h6>
+              <VelocityComponent
+                ref="text"
+                animation={{opacity: 1}}
+                duration={2000}
+                complete={() => this.toggleText()}
+              >
+                <h1 className="font-56 font-weight-600 black">
+                  {text}
+                  <small className="small-text black">{smallText}</small>
+                </h1>
+              </VelocityComponent>
+            </div>
+
+            <VelocityComponent
+              animation={slideUpAnimation}
+            >
+              <button className="row row-h35-bottom no-margin black-bg" onClick={() => console.log("clicked...")}>
+                <h4 className="placeholder1-font">Placeholder B1</h4>
+                <h1 className="font-56">B</h1>
+                <h3 className="placeholder2-font">Placeholder B2</h3>
+                <h5 className="placeholder3-font">Placeholder B3</h5>
+              </button>
             </VelocityComponent>
           </div>
-
-          <VelocityComponent
-            animation={slideUpAnimation}
-            runOnMount={true}
-          >
-            <button className="row row-h35-bottom no-margin black-bg" onClick={() => console.log("clicked...")}>
-              <h4 className="placeholder1-font">Placeholder B1</h4>
-              <h1 className="font-56">B</h1>
-              <h3 className="placeholder2-font">Placeholder B2</h3>
-              <h5 className="placeholder3-font">Placeholder B3</h5>
-            </button>
-          </VelocityComponent>
-        </div>
+        }
       </div>
     );
   }

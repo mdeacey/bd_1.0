@@ -101,13 +101,13 @@ export default class Second extends Component {
                 <h4 className="placeholder1-font">Placeholder A1</h4>
                 <h1 className="font-56">A</h1>
                 <h3 className="placeholder2-font">Placeholder A2</h3>
-                <h5 className="placeholder3-font">Placeholder A3</h5>
+                <h6 className="placeholder3-font">Placeholder A3</h6>
               </button>
             </VelocityComponent>
 
             <div className="row row-h30 no-margin">
               <h5 className="time">{curTime}</h5>
-              <h6 className="placeholder1c-font">{placeholder}</h6>
+              <h7 className="placeholder1c-font">{placeholder}</h7>
               <VelocityComponent
                 ref="text"
                 animation={{opacity: 1}}
@@ -128,7 +128,7 @@ export default class Second extends Component {
                 <h4 className="placeholder1-font">Placeholder B1</h4>
                 <h1 className="font-56">B</h1>
                 <h3 className="placeholder2-font">Placeholder B2</h3>
-                <h5 className="placeholder3-font">Placeholder B3</h5>
+                <h6 className="placeholder3-font">Placeholder B3</h6>
               </button>
             </VelocityComponent>
           </div>

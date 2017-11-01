@@ -33,7 +33,9 @@
 .home-container {
   flex: 1;
   //display: flex;
-  height: 97.7vh;
+  //height: 97.7vh;
+  height: calc(~"100vh - 44px - 44px");
+  background-color: red;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -65,20 +67,23 @@
 //iphone
 @media only screen and (min-width: 350px) and (max-width: 812px) {
   .row-h35 {
-    height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-    position: absolute;
-    top: 44px;
+    //height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
+    //position: absolute;
+    //top: 44px;
+    height: 35vh;
   }
   .row-h35-bottom {
-    height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-    position: absolute;
-    bottom: 0;
+    //height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
+    //position: absolute;
+    //bottom: 0;
+    height: 35vh;
   }
 
   .row-h30 {
-    position: absolute;
-    bottom: 28.4vh; // iphone: 28.4vh, ipad: 32.6vh (safari)
-    height: 22.5vh; // iphone: 22.5vh, ipad: 22.5vh (safari)
+    //position: absolute;
+    //bottom: 28.4vh; // iphone: 28.4vh, ipad: 32.6vh (safari)
+    //height: 22.5vh; // iphone: 22.5vh, ipad: 22.5vh (safari)
+    height: 30vh;
   }
 
   .row {
@@ -140,7 +145,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     //bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
     //height: 20.8vh; // iphone: 22.5vh, ipad: 20.8vh (safari)
     bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
-    height: 20.8vh; // 25vh
+    height: 25vh; // 25vh
   }
 
   .row {

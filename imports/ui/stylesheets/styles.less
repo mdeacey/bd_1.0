@@ -1,13 +1,36 @@
-.wrapper, html, body {
+@import url(//fonts.googleapis.com/css?family=Roboto);
+
+#wrapper, html, body {
   height:100%;
   font-family: "Roboto";
   margin: 0px;
   overflow: hidden !important;
 }
-.wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+@media only screen and (min-width: 350px) {
+  #wrapper {
+    flex: 1;
+    font-family: "Roboto";
+    height: calc(~"100vh - 75px");
+    //height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #wrapper {
+    flex: 1;
+    font-family: "Roboto";
+    height: 100vh;
+    //height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+  }
 }
 
 .header-container {
@@ -30,23 +53,6 @@
   }
 }
 
-.home-container {
-  flex: 1;
-  //display: flex;
-  //height: 97.7vh;
-  height: calc(~"100vh - 44px - 44px");
-  background-color: red;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.flex {
-  display:flex;
-  flex: 1;
-}
-
 .row-first {
   width: 100%;
   height: 75vh;
@@ -65,34 +71,15 @@
 }
 
 //iphone
-@media only screen and (min-width: 350px) and (max-width: 812px) {
-  .row-h35 {
-    //height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-    //position: absolute;
-    //top: 44px;
-    height: 35vh;
-  }
-  .row-h35-bottom {
-    //height: 28.4vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-    //position: absolute;
-    //bottom: 0;
-    height: 35vh;
-  }
-
-  .row-h30 {
-    //position: absolute;
-    //bottom: 28.4vh; // iphone: 28.4vh, ipad: 32.6vh (safari)
-    //height: 22.5vh; // iphone: 22.5vh, ipad: 22.5vh (safari)
-    height: 30vh;
-  }
-
+//@media only screen and (min-width: 350px) and (max-width: 812px) {
+@media only screen and (min-width: 350px){
   .row {
     width: 100%;
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    //flex-wrap: nowrap;
     opacity: 1 !important;
     h2,h3,h4,h5 {
       margin-top: 0px;
@@ -108,7 +95,7 @@
       font-weight: normal;
       font-size: 2.39vh;
       //font-size: 16px;
-      margin-bottom: 12px !important;
+      margin-bottom: 14px !important;
     }
     .font-56 {
       margin-bottom: 4px !important;
@@ -131,23 +118,6 @@
 and (min-width: 768px)
 and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio: 2) {
-  .row-h35 {
-    height: 32.6vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-  }
-  .row-h35-bottom {
-    height: 32.5vh;// iphone: 28.4vh, ipad: 32.5vh (safari)
-    position: absolute;
-    bottom: 0;
-  }
-
-  .row-h30 {
-    position: absolute;
-    //bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
-    //height: 20.8vh; // iphone: 22.5vh, ipad: 20.8vh (safari)
-    bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
-    height: 25vh; // 25vh
-  }
-
   .row {
     width: 100%;
     display: flex !important;
@@ -193,23 +163,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
 and (min-device-width : 1024px)
 and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
-  .row-h35 {
-    height: 32.6vh;// iphone: 28.4vh, ipad: 32.6vh (safari)
-  }
-  .row-h35-bottom {
-    height: 32.5vh;// iphone: 28.4vh, ipad: 32.5vh (safari)
-    position: absolute;
-    bottom: 0;
-  }
-
-  .row-h30 {
-    position: absolute;
-    //bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
-    //height: 20.8vh; // iphone: 22.5vh, ipad: 20.8vh (safari)
-    bottom: 32.5vh; // iphone: 28.4vh, ipad: 32.5vh (safari)
-    height: 20.8vh; // 25vh
-  }
-
   .row {
     width: 100%;
     display: flex !important;
@@ -250,26 +203,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 }
 
-//other
-//@media only screen and (min-width: 1025px) {
-//  .row-h35 {
-//    height: 35%;
-//    position: absolute;
-//    top: 44px;
-//  }
-//  .row-h35-bottom {
-//    height: 35%;
-//    position: absolute;
-//    bottom: 0;
-//  }
-//
-//  .row-h30 {
-//    position: absolute;
-//    bottom: 32%;
-//    height: 30%;
-//  }
-//}
-
 .no-margin {
   margin: 0px !important;
   border: 0px !important;
@@ -300,22 +233,41 @@ and (-webkit-min-device-pixel-ratio: 2) {
   font-size: 8.39vh;
   font-weight: 500;
   margin: 0px !important;
-  .small-text {
-    //font-size: 31px;
-    font-size: 4.64vh;
-    vertical-align: top;
-    opacity: 0.4;
-    position: absolute;
-    letter-spacing: -0.6px;
-    margin-top: 1vh !important; // 78px
-  }
+}
+
+.dynamic-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.dynamic-content span {
+  vertical-align: middle;
+}
+
+.font-56-center {
+  color: #fff;
+  //font-size: 56px;
+  font-size: 8.39vh;
+  font-weight: 500;
+  margin: 0px !important;
+  float: left;
+}
+
+.small-text {
+  //font-size: 31px;
+  font-size: 4.64vh;
+  //vertical-align: top !important;
+  opacity: 0.4;
+  letter-spacing: -0.6px;
+  //position: absolute;
+  //margin-top: 1vh !important; // 78px
 }
 
 .font-weight-600 {
   font-weight: 600 !important;
   letter-spacing: -2.2px;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .dynamic-content {
@@ -343,12 +295,4 @@ and (-webkit-min-device-pixel-ratio: 2) {
   font-weight: normal;
   //font-size: 11px;
   font-size: 1.64vh;
-}
-
-.no-opacity {
-  opacity: 0;
-}
-
-.opacity {
-  opacity: 1;
 }

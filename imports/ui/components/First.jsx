@@ -18,7 +18,7 @@ export default class First extends Component {
   render() {
 
     return (
-      <div className="wrapper">
+      <div id="wrapper">
         <Header/>
         <div className="home-container">
           <div className="row-first">

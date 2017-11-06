@@ -90,49 +90,45 @@ export default class Second extends Component {
     const {text, smallText, placeholder, curTime} = this.state;
 
     return (
-      <div className="wrapper">
+      <div id="wrapper">
         <Header/>
-        {this.state.display &&
-          <div className="home-container">
-            <VelocityComponent
-              animation={slideDownAnimation}
-            >
-              <button className="row row-h35 no-margin black-bg no-opacity" onClick={() => console.log("clicked...")}>
-                <h4 className="placeholder1-font">Placeholder A1</h4>
-                <h1 className="font-56">A</h1>
-                <h3 className="placeholder2-font">Placeholder A2</h3>
-                <h6 className="placeholder3-font">Placeholder A3</h6>
-              </button>
-            </VelocityComponent>
-
-            <div className="row row-h30 no-margin">
-              <h5 className="time">{curTime}</h5>
-              <h7 className="placeholder1c-font">{placeholder}</h7>
-              <VelocityComponent
-                ref="text"
-                animation={{opacity: 1}}
-                duration={2000}
-                complete={() => this.toggleText()}
-              >
-                <h1 className={`font-56 font-weight-600 black dynamic-content`}>
-                  {text}
-                  <span className="small-text black">{smallText}</span>
-                </h1>
-              </VelocityComponent>
-            </div>
-
-            <VelocityComponent
-              animation={slideUpAnimation}
-            >
-              <button className="row row-h35-bottom no-margin black-bg" onClick={() => console.log("clicked...")}>
-                <h4 className="placeholder1-font">Placeholder B1</h4>
-                <h1 className="font-56">B</h1>
-                <h3 className="placeholder2-font">Placeholder B2</h3>
-                <h6 className="placeholder3-font">Placeholder B3</h6>
-              </button>
-            </VelocityComponent>
+        <VelocityComponent
+          animation={slideDownAnimation}
+        >
+          <div className="row vh_height35 black-bg" onClick={() => console.log("clicked...")}>
+            <h4 className="placeholder1-font">Placeholder A1</h4>
+            <h1 className="font-56">A</h1>
+            <h3 className="placeholder2-font">Placeholder A2</h3>
+            <h6 className="placeholder3-font">Placeholder A3</h6>
           </div>
-        }
+        </VelocityComponent>
+
+        <div className="row vh_height30">
+          <h5 className="time">{curTime}</h5>
+          <h2 className="placeholder1c-font">{placeholder}</h2>
+          <VelocityComponent
+            ref="text"
+            animation={{opacity: 1}}
+            duration={2000}
+            complete={() => this.toggleText()}
+          >
+            <div className="font-weight-600 dynamic-content">
+              <span className='font-56-center black'>{text}</span>
+              <span className="small-text black">{smallText}</span>
+            </div>
+          </VelocityComponent>
+        </div>
+
+        <VelocityComponent
+          animation={slideUpAnimation}
+        >
+          <div className="row vh_height35 black-bg" onClick={() => console.log("clicked...")}>
+            <h4 className="placeholder1-font">Placeholder B1</h4>
+            <h1 className="font-56">B</h1>
+            <h3 className="placeholder2-font">Placeholder B2</h3>
+            <h6 className="placeholder3-font">Placeholder B3</h6>
+          </div>
+        </VelocityComponent>
       </div>
     );
   }

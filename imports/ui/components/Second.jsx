@@ -95,17 +95,17 @@ export default class Second extends Component {
         <VelocityComponent
           animation={slideDownAnimation}
         >
-          <div className="row vh_height35 black-bg" onClick={() => console.log("clicked...")}>
-            <h4 className="placeholder1-font">Placeholder A1</h4>
-            <h1 className="font-56">A</h1>
-            <h3 className="placeholder2-font">Placeholder A2</h3>
-            <h6 className="placeholder3-font">Placeholder A3</h6>
+          <div className="row vh_height35 black-bg dynamic-content1" onClick={() => console.log("clicked...")}>
+            <span className="placeholder1-font">Placeholder A1</span>
+            <span className="font-56">A</span>
+            <span className="placeholder2-font">Placeholder A2</span>
+            <span className="placeholder3-font">Placeholder A3</span>
           </div>
         </VelocityComponent>
 
         <div className="row vh_height30">
-          <h5 className="time">{curTime}</h5>
-          <h2 className="placeholder1c-font">{placeholder}</h2>
+          <span className="time">{curTime}</span>
+          <span className="placeholder1c-font">{placeholder}</span>
           <VelocityComponent
             ref="text"
             animation={{opacity: 1}}
@@ -122,11 +122,11 @@ export default class Second extends Component {
         <VelocityComponent
           animation={slideUpAnimation}
         >
-          <div className="row vh_height35 black-bg" onClick={() => console.log("clicked...")}>
-            <h4 className="placeholder1-font">Placeholder B1</h4>
-            <h1 className="font-56">B</h1>
-            <h3 className="placeholder2-font">Placeholder B2</h3>
-            <h6 className="placeholder3-font">Placeholder B3</h6>
+          <div className="row vh_height35 black-bg dynamic-content1" onClick={() => console.log("clicked...")}>
+            <span className="placeholder1-font">Placeholder B1</span>
+            <span className="font-56">B</span>
+            <span className="placeholder2-font">Placeholder B2</span>
+            <span className="placeholder3-font">Placeholder B3</span>
           </div>
         </VelocityComponent>
       </div>

@@ -9,7 +9,7 @@
 
 @media only screen and (min-width: 350px) {
   #wrapper {
-    flex: 1;
+    //flex: 1;
     font-family: "Roboto";
     height: calc(~"100vh - 75px");
     //height: 100vh !important;
@@ -22,10 +22,9 @@
 
 @media only screen and (min-width: 768px) {
   #wrapper {
-    flex: 1;
+    //flex: 1;
     font-family: "Roboto";
-    height: 100vh;
-    //height: 100vh !important;
+    height: 100vh !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +50,18 @@
     float: right;
     margin: 11px;
   }
+}
+
+.home {
+  flex: 1;
+  width: 100%;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: middle;
 }
 
 .row-first {
@@ -81,34 +92,16 @@
     align-items: center;
     //flex-wrap: nowrap;
     opacity: 1 !important;
-    h2,h3,h4,h5 {
+    span {
       margin-top: 0px;
       margin-bottom: 0px;
     }
-    h5 {
-      margin-top: 3px;
-    }
-    h6 {
+    .placeholder3-font {
       margin-top: 6px;
-    }
-    .time {
-      font-weight: normal;
-      font-size: 2.39vh;
-      //font-size: 16px;
-      margin-bottom: 14px !important;
     }
     .font-56 {
       margin-bottom: 4px !important;
     }
-  }
-
-  .placeholder1-font {
-    color: #ffffff;
-    opacity: 0.4;
-    font-weight: normal;
-    font-size: 2.39vh;
-    //font-size: 16px;
-    margin-top: 17px !important;
   }
 
 }
@@ -126,36 +119,17 @@ and (-webkit-min-device-pixel-ratio: 2) {
     align-items: center;
     flex-wrap: nowrap;
     opacity: 1 !important;
-    h2,h3,h4 {
+    span {
       margin-top: 0px;
       margin-bottom: 0px;
     }
-    h5 {
-      margin-top: 4px;
-    }
-    h6 {
+    .placeholder3-font {
       margin-top: 10px;
-    }
-    .time {
-      font-weight: normal;
-      font-size: 2.39vh;
-      //font-size: 16px;
-      margin-bottom: 34px !important;
     }
     .font-56 {
       margin-bottom: 21px !important;
     }
   }
-
-  .placeholder1-font {
-    color: #ffffff;
-    opacity: 0.4;
-    font-weight: normal;
-    font-size: 2.39vh;
-    //font-size: 16px;
-    margin-top: 53px !important;
-  }
-
 }
 
 // ipad landscape
@@ -171,37 +145,28 @@ and (-webkit-min-device-pixel-ratio: 2) {
     align-items: center;
     flex-wrap: nowrap;
     opacity: 1 !important;
-    h2,h3,h4 {
+    span {
       margin-top: 0px;
       margin-bottom: 0px;
     }
-    h5 {
-      margin-top: 4px;
-    }
-    h6 {
+    .placeholder3-font {
       margin-top: 10px;
-    }
-    .time {
-      font-weight: normal;
-      font-size: 2.39vh;
-      //font-size: 16px;
-      margin-bottom: 34px !important;
     }
     .font-56 {
       margin-bottom: 21px !important;
     }
   }
 
-  .placeholder1-font {
-    color: #ffffff;
-    opacity: 0.4;
-    font-weight: normal;
-    font-size: 2.39vh;
-    //font-size: 16px;
-    margin-top: 53px !important;
-  }
-
 }
+
+.time {
+  font-weight: normal;
+  font-size: 2.39vh;
+  //font-size: 16px;
+  padding-top: 4%;
+  margin-bottom: 4% !important;
+}
+
 
 .no-margin {
   margin: 0px !important;
@@ -235,6 +200,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
   margin: 0px !important;
 }
 
+.dynamic-content1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .dynamic-content {
   display: flex;
   align-items: center;
@@ -261,6 +233,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
   //vertical-align: top !important;
   opacity: 0.4;
   letter-spacing: -0.6px;
+  margin-top: -6% !important;
   //position: absolute;
   //margin-top: 1vh !important; // 78px
 }
@@ -279,14 +252,23 @@ and (-webkit-min-device-pixel-ratio: 2) {
   opacity: 0.4;
   font-weight: normal;
   //font-size: 16px;
-  font-size: 2.39vh;
+  font-size: 2.50vh;
+}
+
+.placeholder1-font {
+  color: #ffffff;
+  opacity: 0.4;
+  font-weight: normal;
+  font-size: 2.50vh; //2.39
+  //font-size: 16px;
+  padding-top: 0% !important;
 }
 
 .placeholder2-font {
   color: #ffffff;
   font-weight: normal;
   //font-size: 20px;
-  font-size: 2.99vh;
+  font-size: 3.10vh; // 2.99
 }
 
 .placeholder3-font {
@@ -294,5 +276,5 @@ and (-webkit-min-device-pixel-ratio: 2) {
   opacity: 0.4;
   font-weight: normal;
   //font-size: 11px;
-  font-size: 1.64vh;
+  font-size: 1.70vh; //1.64
 }

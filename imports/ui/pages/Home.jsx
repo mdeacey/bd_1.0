@@ -26,6 +26,14 @@ export default class Home extends Component {
 
     $(window).bind("orientationchange", function(evt){
       alert(evt.orientation);
+      switch(evt.orientation)
+      {
+        case -90: case 90:
+        /* Device is in landscape mode */
+        break;
+        default:
+        /* Device is in portrait mode */
+      }
     });
   }
 

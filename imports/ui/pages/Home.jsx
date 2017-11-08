@@ -18,12 +18,38 @@ export default class Home extends Component {
     autoBind(this);
   }
 
+  componentDidMount() {
+    let detectFlex = CSS.supports('flex-direction', 'column');
+    if (!detectFlex) {
+      this.setState({message: 'Your device is too old'});
+    }
+
+    $(window).bind("orientationchange", function(evt){
+      alert(evt.orientation);
+    });
+  }
+
   toggleComponent() {
     this.setState(currentState => ({ opacity: false, component: currentState.component + 1}));
   }
 
   render() {
+    const {message} = this.state;
 
+    if (message) {
+      return (
+        <div id="wrapper">
+          <div className="home-container">
+            <div className="row-first">
+              <h3>{message}</h3>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+
+    ///////////// render components //////////////
     let props = {
       toggleComponent: this.toggleComponent.bind(this)
     };

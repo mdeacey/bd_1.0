@@ -87,7 +87,7 @@ export default class Second extends Component {
   }
 
   render() {
-    const {text, smallText, placeholder, curTime} = this.state;
+    const {text, smallText, placeholder, curTime, message} = this.state;
 
     return (
       <div id="wrapper">

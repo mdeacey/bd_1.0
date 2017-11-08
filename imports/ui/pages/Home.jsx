@@ -24,15 +24,20 @@ export default class Home extends Component {
       this.setState({message: 'Your device is too old'});
     }
 
+    let self = this;
+
     $(window).bind("orientationchange", function(evt){
-      alert(evt.orientation);
-      switch(evt.orientation)
+      switch(window.orientation)
       {
-        case -90: case 90:
+        case -90: case 90: {
         /* Device is in landscape mode */
+          self.setState({message: 'Rotate your device to Portrait mode'});
+        }
         break;
-        default:
-        /* Device is in portrait mode */
+        default: {
+          /* Device is in portrait mode */
+          self.setState({message: undefined});
+        }
       }
     });
   }

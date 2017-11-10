@@ -4,7 +4,7 @@
   height:100%;
   font-family: "Roboto";
   margin: 0px;
-  //overflow: hidden !important;
+  overflow: hidden !important;
 }
 
 @media only screen and (min-width: 350px) {
@@ -19,17 +19,28 @@
     align-items: center;
     vertical-align: middle;
   }
+
+  .body {
+    width: 100%;
+    height: calc(~"100vh - 44px") !important;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   #wrapper {
     flex: 1;
     font-family: "Roboto";
+    //height: calc(~"100vh - 44px");
     height: 100vh !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     vertical-align: middle;
+  }
+
+  .body {
+    width: 100%;
+    height: calc(~"100vh - 44px") !important;
   }
 }
 
@@ -110,8 +121,8 @@
 //ipad potrait
 @media only screen
 and (min-width: 768px)
-and (orientation : portrait)
-and (-webkit-min-device-pixel-ratio: 2) {
+and (orientation : portrait) {
+//and (-webkit-min-device-pixel-ratio: 2) {
   .row {
     width: 100%;
     display: flex !important;

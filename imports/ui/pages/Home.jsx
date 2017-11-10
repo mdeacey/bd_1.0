@@ -27,18 +27,23 @@ export default class Home extends Component {
     let self = this;
 
     $(window).bind("orientationchange", function(evt){
-      switch(window.orientation)
-      {
-        case -90: case 90: {
-        /* Device is in landscape mode */
+      let isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
+
+      if (isMobile.matches) {
+        switch(window.orientation) {
+          case -90: case 90: {
+          /* Device is in landscape mode */
           self.setState({message: 'Rotate your device to Portrait mode'});
         }
-        break;
-        default: {
-          /* Device is in portrait mode */
-          self.setState({message: undefined});
+          break;
+          default: {
+            /* Device is in portrait mode */
+            self.setState({message: undefined});
+          }
         }
       }
+
     });
   }
 

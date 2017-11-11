@@ -48,6 +48,12 @@ export default class Second extends Component {
   }
 
   componentDidMount() {
+    let ua = window.navigator.userAgent;
+    let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+    let webkit = !!ua.match(/WebKit/i);
+    let iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+    this.setState({agent: iOSSafari});
+
     this.setTime(moment());
     let self = this;
     setInterval(() => {
@@ -87,10 +93,10 @@ export default class Second extends Component {
   }
 
   render() {
-    const {text, smallText, placeholder, curTime, message} = this.state;
+    const {text, smallText, placeholder, curTime, agent} = this.state;
 
     return (
-      <div id="wrapper">
+      <div id={agent ? "safari-wrapper" : "wrapper"}>
         <Header/>
         <VelocityComponent
           animation={slideDownAnimation}

@@ -49,7 +49,7 @@ export default class Second extends Component {
 
   componentDidMount() {
     let ua = window.navigator.userAgent;
-    let iOS = !!ua.match(/iPhone/i);
+    let iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
     let webkit = !!ua.match(/WebKit/i);
     let iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
     this.setState({agent: iOSSafari});
@@ -96,7 +96,7 @@ export default class Second extends Component {
     const {text, smallText, placeholder, curTime, agent} = this.state;
 
     return (
-      <div id={agent ? "safari-wrapper" : "wrapper"}>
+      <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>
         <Header/>
         <VelocityComponent
           animation={slideDownAnimation}

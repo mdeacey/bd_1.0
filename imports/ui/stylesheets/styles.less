@@ -88,7 +88,8 @@
 
 //iphone
 //@media only screen and (min-width: 350px) and (max-width: 812px) {
-@media only screen and (min-width: 350px){
+@media only screen
+and (min-width: 200px) {
   .row {
     width: 100%;
     display: flex !important;
@@ -111,11 +112,9 @@
 
 }
 
-//ipad potrait
+//ipad and desktop
 @media only screen
-and (min-width: 768px)
-and (orientation : portrait) {
-//and (-webkit-min-device-pixel-ratio: 2) {
+and (min-width: 768px) {
   .row {
     width: 100%;
     display: flex !important;
@@ -132,36 +131,9 @@ and (orientation : portrait) {
       margin-top: 10px;
     }
     .font-56 {
-      margin-bottom: 21px !important;
+      margin-bottom: 36px !important;
     }
   }
-}
-
-// ipad landscape
-@media only screen
-and (min-device-width : 1024px)
-and (orientation : landscape)
-and (-webkit-min-device-pixel-ratio: 2) {
-  .row {
-    width: 100%;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    opacity: 1 !important;
-    span {
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-    .placeholder3-font {
-      margin-top: 10px;
-    }
-    .font-56 {
-      margin-bottom: 21px !important;
-    }
-  }
-
 }
 
 .no-margin {
@@ -216,7 +188,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 //////////////// MOBILE text sizes /////////////////////
-@media only screen and (min-width: 350px) {
+@media only screen
+and (min-width: 350px)
+and (max-width: 768px) {
 
   .time {
     font-weight: normal;
@@ -289,28 +263,28 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 ///////////////////// IPAD AND DESKTOP size /////////////////////
 @media only screen
-and (min-width: 768px) {
+and (min-width: 600px) {
   .time {
     font-weight: normal;
-    font-size: 2.39vh;
+    font-size:  2.75vh;
     //font-size: 16px;
-    padding-top: 4%;
+    //padding-top: 2%;
     margin-bottom: 4% !important;
   }
 
   .font-56 {
     color: #fff;
     //font-size: 56px;
-    font-size: 8.39vh;
-    font-weight: 500;
+    font-size: 6.39vh;
+    font-weight: bold;
     margin: 0px !important;
   }
 
   .font-56-center {
     color: #fff;
     //font-size: 56px;
-    font-size: 8.39vh;
-    font-weight: 500;
+    font-size: 6.39vh; // 8.39
+    font-weight: bold;
     margin: 0px !important;
     float: left;
   }
@@ -331,16 +305,16 @@ and (min-width: 768px) {
     opacity: 0.4;
     font-weight: normal;
     //font-size: 16px;
-    font-size: 2.50vh;
+    font-size:  2.75vh;
   }
 
   .placeholder1-font {
     color: #ffffff;
     opacity: 0.4;
     font-weight: normal;
-    font-size: 2.50vh; //2.39
+    font-size: 2.75vh; //2.50
     //font-size: 16px;
-    padding-top: 0% !important;
+    //margin-bottom: 0.5% !important;
   }
 
   .placeholder2-font {
@@ -355,6 +329,6 @@ and (min-width: 768px) {
     opacity: 0.4;
     font-weight: normal;
     //font-size: 11px;
-    font-size: 1.70vh; //1.64
+    font-size: 2.00vh; //1.64
   }
 }

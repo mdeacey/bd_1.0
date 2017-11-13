@@ -193,7 +193,7 @@ and (min-width: 768px) {
 //////////////// MOBILE text sizes /////////////////////
 @media only screen
 and (min-width: 200px)
-and (max-width: 750px) {
+and (max-width: 749px) {
 
   .time {
     font-weight: normal;
@@ -266,8 +266,7 @@ and (max-width: 750px) {
 
 ///////////////////// IPAD AND DESKTOP size /////////////////////
 @media only screen
-and (min-width: 768px)
-and (orientation: portrait) {
+and (min-width: 768px) {
   .time {
     font-weight: normal;
     font-size:  2.75vh;
@@ -339,6 +338,31 @@ and (orientation: portrait) {
 }
 
 //////////////////// IPAD LANDSCAPE /////////////////////////
+//ipad landscape
+@media only screen
+and (min-width: 900px)
+and (orientation: landscape){
+  .row {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    opacity: 1 !important;
+    span {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .placeholder3-font {
+      margin-top: 7px;
+    }
+    .font-56 {
+      margin-bottom: 25px !important;
+    }
+  }
+}
+
 @media only screen
 and (min-width: 900px)
 and (orientation: landscape) {
@@ -347,8 +371,8 @@ and (orientation: landscape) {
     font-size:  2.75vh;
     //font-size: 16px;
     //padding-top: 2%;
-    margin-top: -18px !important;
-    margin-bottom: 5.4% !important;
+    margin-top: -10px !important;
+    margin-bottom: 2.4% !important;
   }
 
   .font-56 {
@@ -356,7 +380,7 @@ and (orientation: landscape) {
     //font-size: 56px;
     font-size: 6.39vh;
     font-weight: bold;
-    margin: 0px !important;
+    margin: 0px;
   }
 
   .font-56-center {
@@ -392,6 +416,7 @@ and (orientation: landscape) {
     opacity: 0.4;
     font-weight: normal;
     font-size: 2.75vh; //2.50
+    margin-top: -0.5% !important;
     //font-size: 16px;
     //margin-bottom: 0.5% !important;
   }

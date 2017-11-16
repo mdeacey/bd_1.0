@@ -6,27 +6,27 @@ import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'veloci
 import Header from './Header';
 
 const slideDownAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 900,
+  defaultDuration: 2000,
   calls: [
     [{
-      opacity: [1, 0],
-      translateY: [0, -75],
+      opacity: [1,0],
+      translateY: [0, -300],
     }, 1, {
-      // delay: 500,
-      // easing: 'ease-in',
+      // delay: 20,
+      easing: 'ease-in',
     }]
   ],
 });
 
 const slideUpAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 900,
+  defaultDuration: 2000,
   calls: [
     [{
-      opacity: [1, 0],
-      translateY: [0, 75],
+      opacity: [1,0],
+      translateY: [0, 300],
     }, 1, {
-      // delay: 500,
-      // easing: 'ease-in',
+      // delay: 20,
+      easing: 'ease-in',
     }]
   ],
 });
@@ -40,7 +40,7 @@ export default class Second extends Component {
       display: true,
       text: "ABCD.EF",
       smallText: "ABC",
-      placeholder: "Placeholder C1"
+      placeholder: "Placeholder C1",
     }
 
     //binding functions

@@ -11,6 +11,7 @@ export default class Home extends Component {
     super(props)
 
     this.state = {
+      opacity: 0,
       component: 1,
     }
 
@@ -48,11 +49,17 @@ export default class Home extends Component {
   }
 
   toggleComponent() {
-    this.setState(currentState => ({ opacity: false, component: currentState.component + 1}));
+    if (this.state.component <= 1) {
+      this.setState({opacity: 0});
+
+      setTimeout(() => {
+        this.setState(currentState => ({ opacity: 1, component: currentState.component + 1}));
+      }, 200);
+    }
   }
 
   render() {
-    const {message} = this.state;
+    const {message, opacity} = this.state;
 
     if (message) {
       return (
@@ -83,7 +90,7 @@ export default class Home extends Component {
 
     return (
       <VelocityComponent
-        animation={{opacity: 1}}
+        animation={{opacity}}
         duration={2000}
         begin={() => console.log("begin...")}
         complete={() => this.toggleComponent()}

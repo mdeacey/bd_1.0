@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import moment from 'moment';
 import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'velocity-react';
+import bowser from 'bowser';
 
 import Header from './Header';
 
@@ -54,11 +55,52 @@ export default class Second extends Component {
     let iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
     this.setState({agent: iOSSafari});
 
+    this.detectDevice();
+
     this.setTime(moment());
     let self = this;
     setInterval(() => {
       self.setState({display: true});
     }, 500);
+  }
+
+  detectDevice() {
+    console.log('Current browser: ' + bowser.name + ' ' + bowser.version);
+
+    if (bowser.mobile) {
+      console.log("Mobile detected", bowser.mobile);
+
+      if (bowser.chrome) {
+        console.log("Chrome detected");
+      } else if (bowser.safari) {
+        console.log("Safari detected");
+      } else if (bowser.firefox) {
+        console.log("Firefox detected");
+      }
+
+    } else if (bowser.tablet) {
+      console.log("Tab detected", bowser.tablet);
+
+      if (bowser.chrome) {
+        console.log("Chrome detected");
+      } else if (bowser.safari) {
+        console.log("Safari detected");
+      } else if (bowser.firefox) {
+        console.log("Firefox detected");
+      }
+
+    } else if (bowser.mac || bowser.windows || bowser.linux) {
+      console.log("Desktop detected");
+
+      if (bowser.chrome) {
+        console.log("Chrome detected");
+      } else if (bowser.safari) {
+        console.log("Safari detected");
+      } else if (bowser.firefox) {
+        console.log("Firefox detected");
+      }
+
+    }
   }
 
   componentWillMount(){

@@ -6,33 +6,6 @@ import bowser from 'bowser';
 
 import Header from './Header';
 
-const slideDownAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 2000,
-  calls: [
-    [{
-      opacity: [1,0],
-      translateY: [0, -300],
-    }, 1, {
-      // delay: 20,
-      easing: 'ease-in',
-    }]
-  ],
-});
-
-const slideUpAnimation = velocityHelpers.registerEffect({
-  defaultDuration: 2000,
-  calls: [
-    [{
-      opacity: [1,0],
-      translateY: [0, 300],
-    }, 1, {
-      // delay: 20,
-      easing: 'ease-in',
-    }]
-  ],
-});
-
-
 export default class Second extends Component {
   constructor(props){
     super(props)
@@ -42,7 +15,11 @@ export default class Second extends Component {
       text: "ABCD.EF",
       smallText: "ABC",
       placeholder: "Placeholder C1",
-    }
+      duration: 2000,
+    };
+
+    this.slideDownAnimation = null;
+    this.slideUpAnimation = null;
 
     //binding functions
     autoBind(this);
@@ -56,6 +33,7 @@ export default class Second extends Component {
     this.setState({agent: iOSSafari});
 
     this.detectDevice();
+    this.setupAnimation();
 
     this.setTime(moment());
     let self = this;
@@ -80,6 +58,7 @@ export default class Second extends Component {
 
     } else if (bowser.tablet) {
       console.log("Tab detected", bowser.tablet);
+      this.setState({duration: 650});
 
       if (bowser.chrome) {
         console.log("Chrome detected");
@@ -91,9 +70,11 @@ export default class Second extends Component {
 
     } else if (bowser.mac || bowser.windows || bowser.linux) {
       console.log("Desktop detected");
+      this.setState({duration: 650});
 
       if (bowser.chrome) {
         console.log("Chrome detected");
+
       } else if (bowser.safari) {
         console.log("Safari detected");
       } else if (bowser.firefox) {
@@ -101,6 +82,37 @@ export default class Second extends Component {
       }
 
     }
+
+  }
+
+  setupAnimation() {
+    const {duration} = this.state;
+
+    this.slideDownAnimation = velocityHelpers.registerEffect({
+      defaultDuration: duration,
+      calls: [
+        [{
+          opacity: [1,0],
+          translateY: [0, -350],
+        }, 1, {
+          // delay: 20,
+          easing: 'easeInOutQuint',
+        }]
+      ],
+    });
+
+    this.slideUpAnimation = velocityHelpers.registerEffect({
+      defaultDuration: duration,
+      calls: [
+        [{
+          opacity: [1,0],
+          translateY: [0, 300],
+        }, 1, {
+          // delay: 20,
+          easing: 'easeInOutQuint',
+        }]
+      ],
+    });
   }
 
   componentWillMount(){
@@ -135,13 +147,18 @@ export default class Second extends Component {
   }
 
   render() {
-    const {text, smallText, placeholder, curTime, agent} = this.state;
+    const {text, smallText, placeholder, curTime, agent, displayHeader} = this.state;
 
     return (
       <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>
-        <Header/>
+          <VelocityComponent
+            animation={this.slideDownAnimation}
+          >
+            <Header/>
+          </VelocityComponent>
+
         <VelocityComponent
-          animation={slideDownAnimation}
+          animation={this.slideDownAnimation}
         >
           <div className="row vh_height35 black-bg dynamic-content1" onClick={() => console.log("clicked...")}>
             <span className="placeholder1-font">Placeholder A1</span>
@@ -168,7 +185,7 @@ export default class Second extends Component {
         </div>
 
         <VelocityComponent
-          animation={slideUpAnimation}
+          animation={this.slideUpAnimation}
         >
           <div className="row vh_height35 black-bg dynamic-content1" onClick={() => console.log("clicked...")}>
             <span className="placeholder1-font">Placeholder B1</span>

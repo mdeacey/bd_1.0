@@ -19,7 +19,6 @@ export default class First extends Component {
 
     return (
       <div id="wrapper">
-        <Header/>
         <div className="home-container">
           <div className="row-first">
             <h1 className="placeholder">

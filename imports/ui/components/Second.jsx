@@ -16,6 +16,7 @@ export default class Second extends Component {
       smallText: "ABC",
       placeholder: "Placeholder C1",
       duration: 2000,
+      opacity: 0
     };
 
     this.slideDownAnimation = null;
@@ -147,7 +148,7 @@ export default class Second extends Component {
   }
 
   render() {
-    const {text, smallText, placeholder, curTime, agent, displayHeader} = this.state;
+    const {text, smallText, placeholder, curTime, agent, opacity} = this.state;
 
     return (
       <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>

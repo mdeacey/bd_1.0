@@ -89,6 +89,8 @@ export default class Home extends Component {
       }
     }
 
+    return component;
+
     return (
       <VelocityComponent
         animation={{opacity}}

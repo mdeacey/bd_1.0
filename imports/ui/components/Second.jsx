@@ -11,7 +11,7 @@ export default class Second extends Component {
     super(props)
 
     this.state = {
-      display: true,
+      display: false,
       text: "ABCD.EF",
       smallText: "ABC",
       placeholder: "Placeholder C1",
@@ -39,7 +39,7 @@ export default class Second extends Component {
     let self = this;
     setInterval(() => {
       self.setState({display: true});
-    }, 500);
+    }, 1000);
   }
 
   detectDevice() {
@@ -151,11 +151,11 @@ export default class Second extends Component {
 
     return (
       <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>
-          <VelocityComponent
-            animation={this.slideDownAnimation}
-          >
-            <Header/>
-          </VelocityComponent>
+        <VelocityComponent
+          animation={this.slideDownAnimation}
+        >
+          <Header/>
+        </VelocityComponent>
 
         <VelocityComponent
           animation={this.slideDownAnimation}

@@ -19,6 +19,7 @@ export default class Second extends Component {
       opacity: 0
     };
 
+    this.slideDownHeaderAnimation = null;
     this.slideDownAnimation = null;
     this.slideUpAnimation = null;
 
@@ -89,7 +90,7 @@ export default class Second extends Component {
   setupAnimation() {
     const {duration} = this.state;
 
-    this.slideDownAnimation = velocityHelpers.registerEffect({
+    this.slideDownHeaderAnimation = velocityHelpers.registerEffect({
       defaultDuration: duration,
       calls: [
         [{
@@ -97,6 +98,19 @@ export default class Second extends Component {
           translateY: [0, -350],
         }, 1, {
           // delay: 20,
+          easing: 'easeInOutQuint',
+        }]
+      ],
+    });
+
+    this.slideDownAnimation = velocityHelpers.registerEffect({
+      defaultDuration: duration,
+      calls: [
+        [{
+          opacity: [1,0],
+          translateY: [0, -350],
+        }, 1, {
+          // delay: 120,
           easing: 'easeInOutQuint',
         }]
       ],
@@ -153,7 +167,7 @@ export default class Second extends Component {
     return (
       <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>
         <VelocityComponent
-          animation={this.slideDownAnimation}
+          animation={this.slideDownHeaderAnimation}
         >
           <Header/>
         </VelocityComponent>

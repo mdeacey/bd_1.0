@@ -40,7 +40,7 @@ export default class First extends Component {
             </div>
           </div>
         }
-        <Second/>
+        {!this.state.display && <Second/>}
       </div>
     );
   }

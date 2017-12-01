@@ -9,7 +9,8 @@ export default class First extends Component {
     super(props)
 
     this.state = {
-      display: true
+      display: true,
+      opacity: 0
     }
 
     //binding functions
@@ -19,11 +20,12 @@ export default class First extends Component {
   componentDidMount() {
     let self = this;
     setTimeout(() => {
-      self.setState({display: false});
+      self.setState({display: false, opacity: 1});
     }, 1000);
   }
 
   render() {
+    const {opacity} = this.state;
 
     return (
       <div>
@@ -40,7 +42,12 @@ export default class First extends Component {
             </div>
           </div>
         }
-        {!this.state.display && <Second/>}
+        <VelocityComponent
+          animation={{opacity}}
+          duration={2000}
+        >
+          <Second/>
+        </VelocityComponent>
       </div>
     );
   }

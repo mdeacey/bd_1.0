@@ -4,9 +4,11 @@ import moment from 'moment';
 import {VelocityComponent,VelocityTransitionGroup, velocityHelpers} from 'velocity-react';
 import bowser from 'bowser';
 
+//components
+import Loading from './Loading';
 import Header from './Header';
 
-export default class Second extends Component {
+export default class Main extends Component {
   constructor(props){
     super(props)
 
@@ -16,7 +18,8 @@ export default class Second extends Component {
       smallText: "ABC",
       placeholder: "Placeholder C1",
       duration: 2000,
-      opacity: 0
+      opacity: 0,
+      component: 1,
     };
 
     this.slideDownHeaderAnimation = null;
@@ -161,8 +164,55 @@ export default class Second extends Component {
     this.refs.text.runAnimation();
   }
 
+  toggleComponent() {
+    if (this.state.component <= 1) {
+      this.setState({opacity: 0});
+
+      setTimeout(() => {
+        this.setState(currentState => ({ opacity: 1, component: currentState.component + 1}));
+      }, 200);
+    }
+  }
+
+  renderTimer({curTime, placeholder, toggleText, text, smallText}) {
+
+    return (
+      <div className="row vh_height30">
+        <span className="time">{curTime}</span>
+        <span className="placeholder1c-font">{placeholder}</span>
+        <VelocityComponent
+          ref="text"
+          animation={{opacity: 1}}
+          duration={2000}
+          complete={() => toggleText()}
+        >
+          <div className="font-weight-600 dynamic-content">
+            <span className='font-56-center black'>{text}</span>
+            <span className="small-text black">{smallText}</span>
+          </div>
+        </VelocityComponent>
+      </div>
+    );
+  }
+
   render() {
-    const {text, smallText, placeholder, curTime, agent, opacity} = this.state;
+    const {component, agent, opacity} = this.state;
+
+    let component1;
+    switch(component) {
+      case 1: {
+        component1 = <Loading />;
+        break;
+      }
+      case 2: {
+        let props = {
+          ...this.state,
+          toggleText: this.toggleText.bind(this)
+        };
+
+        component1 = this.renderTimer(props);
+      }
+    }
 
     return (
       <div className="body" id={agent ?  "safari-wrapper" : "wrapper"}>
@@ -183,21 +233,14 @@ export default class Second extends Component {
           </div>
         </VelocityComponent>
 
-        <div className="row vh_height30">
-          <span className="time">{curTime}</span>
-          <span className="placeholder1c-font">{placeholder}</span>
-          <VelocityComponent
-            ref="text"
-            animation={{opacity: 1}}
-            duration={2000}
-            complete={() => this.toggleText()}
-          >
-            <div className="font-weight-600 dynamic-content">
-              <span className='font-56-center black'>{text}</span>
-              <span className="small-text black">{smallText}</span>
-            </div>
-          </VelocityComponent>
-        </div>
+        <VelocityComponent
+          animation={{opacity}}
+          duration={2000}
+          begin={() => console.log("begin...")}
+          complete={() => this.toggleComponent()}
+        >
+          {component1}
+        </VelocityComponent>
 
         <VelocityComponent
           animation={this.slideUpAnimation}
@@ -213,5 +256,4 @@ export default class Second extends Component {
     );
   }
 };
-
 

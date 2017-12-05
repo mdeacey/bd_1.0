@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import {VelocityComponent,VelocityTransitionGroup} from 'velocity-react';
 
-import First from '../components/First';
-import Second from '../components/Second';
-import Third from '../components/Third';
-
+import Main from '../components/Main';
 
 export default class Home extends Component {
   constructor(props){
@@ -80,26 +77,8 @@ export default class Home extends Component {
       toggleComponent: this.toggleComponent.bind(this)
     };
 
-    let component = <First {...props} />;
-
-    switch (this.state.component) {
-      case 2: {
-        component = <Second {...props} />
-        break;
-      }
-    }
+    let component = <Main {...props} />;
 
     return component;
-
-    return (
-      <VelocityComponent
-        animation={{opacity}}
-        duration={2000}
-        begin={() => console.log("begin...")}
-        complete={() => this.toggleComponent()}
-      >
-        {component}
-      </VelocityComponent>
-    );
   }
 };

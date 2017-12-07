@@ -57,7 +57,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const {message, opacity} = this.state;
+    const {message} = this.state;
 
     if (message) {
       return (
@@ -77,8 +77,6 @@ export default class Home extends Component {
       toggleComponent: this.toggleComponent.bind(this)
     };
 
-    let component = <Main {...props} />;
-
-    return component;
+    return <Main {...props} />;
   }
 };

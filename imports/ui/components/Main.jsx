@@ -235,7 +235,7 @@ export default class Main extends Component {
 
         <VelocityComponent
           animation={{opacity}}
-          duration={2000}
+          duration={1000}
           begin={() => console.log("begin...")}
           complete={() => this.toggleComponent()}
         >
